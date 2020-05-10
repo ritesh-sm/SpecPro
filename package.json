@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "backend": "cd server && npm start",
+    "client": "ng serve",
+    "start": "concurrently --kill-others \"npm run client\" \"npm run backend\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,6 +21,11 @@
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "concurrently": "^5.2.0",
+    "esm": "^3.2.25",
+    "ng2-pdf-viewer": "^6.3.0",
+    "nodemon": "^2.0.3",
+    "pdftohtmljs": "^0.6.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
